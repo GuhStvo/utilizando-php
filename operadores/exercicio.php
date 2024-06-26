@@ -20,9 +20,9 @@ echo "<hr>";
 /* 02 */
 /* ------------------------------------ */
 
-$tem_saldo = true;
+$tem_saldo = false;
 $fazer_compra = true;
-$valor_compra = 15.50;
+$valor_compra = 255;
 $saldo_conta = 19.69;
 
 echo "Usuário tem saldo na conta? ". ($tem_saldo ? "SIM" : "NÃO");
@@ -52,3 +52,49 @@ echo "<hr>";
 /* 03 */
 /* ------------------------------------ */
 
+$celsius = 17;
+$fahrenheit = ($celsius * 9/5) + 32;
+echo "Esta fazendo ".$celsius."° graus Celsius. ";
+echo "(".$fahrenheit."° em Fahrenheit.) <hr>";
+
+/* 04 */
+/* ------------------------------------ */
+echo "Para autorização de entrada o usuário deve ser MAIOR DE 18 ANOS e ter AUTORIZAÇÃO DO PAIS. <br>";
+
+$maior_de_idade = true;
+$tem_autorizacao = false;
+
+echo "Usuário ". ($maior_de_idade && $tem_autorizacao ? "TEM AUTORIZAÇÃO": "NÃO TEM AUTORIZAÇÃO");
+echo "<hr>";
+
+/* 04 */
+/* ------------------------------------ */
+
+function numPrimo($num) {
+    // Números menores que 2 não são primos
+    if ($num < 2) {
+        return false;
+    }
+    
+    // Calcula a raiz quadrada do número
+    $sqrtNum = sqrt($num);
+
+    // Verifica divisores de 2 até a raiz quadrada do número
+    for ($i = 2; $i <= $sqrtNum; $i++) {
+        // Se encontrar um divisor, o número não é primo
+        if ($num % $i == 0) {
+            return false;
+        }
+    }
+
+    // Se não encontrar nenhum divisor, o número é primo
+    return true;
+}
+
+// Exemplo de uso
+$num = 62;
+if (numPrimo($num)) {
+    echo "$num é um número primo.";
+} else {
+    echo "$num não é um número primo.";
+}
