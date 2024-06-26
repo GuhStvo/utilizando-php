@@ -1,19 +1,19 @@
 <?php
 /* 01 */
 /* ------------------------------------ */
-$altura = 1.79;
+$altura = 1.76;
 $peso = 69.5;
 
 $IMC = $peso / ($altura * $altura);
 echo "Seu IMC é: ". round($IMC, 2) . "<br>";
 if ($IMC < 18.5) {
-    echo "Seu peso esta abaixo do normal.";
+    echo "Seu peso está abaixo do normal.";
 } else if ($IMC < 24.9) {
     echo "Seu peso esta normal.";
 } else if ($IMC < 29.9) {
-    echo "Você esta com sobrepeso";
+    echo "Você está com sobrepeso";
 } else {
-    echo "Você esta obeso.";
+    echo "Você está obeso.";
 }
 echo "<hr>";
 
@@ -67,34 +67,18 @@ $tem_autorizacao = false;
 echo "Usuário ". ($maior_de_idade && $tem_autorizacao ? "TEM AUTORIZAÇÃO": "NÃO TEM AUTORIZAÇÃO");
 echo "<hr>";
 
-/* 04 */
+/* 05 */
 /* ------------------------------------ */
 
-function numPrimo($num) {
-    // Números menores que 2 não são primos
-    if ($num < 2) {
-        return false;
-    }
-    
-    // Calcula a raiz quadrada do número
-    $sqrtNum = sqrt($num);
+$num = ;
 
-    // Verifica divisores de 2 até a raiz quadrada do número
-    for ($i = 2; $i <= $sqrtNum; $i++) {
-        // Se encontrar um divisor, o número não é primo
-        if ($num % $i == 0) {
-            return false;
-        }
-    }
+$divi_2 = fmod($num, 2);
+$divi_3 = fmod($num, 3);
+$divi_5 = fmod($num, 5);
+$divi_7 = fmod($num, 7);
 
-    // Se não encontrar nenhum divisor, o número é primo
-    return true;
-}
-
-// Exemplo de uso
-$num = 62;
-if (numPrimo($num)) {
-    echo "$num é um número primo.";
+if ($divi_7 == 0 || $divi_2 == 0 || $divi_5 == 0 || $divi_3 == 0) {
+    echo "$num não é número primo.";
 } else {
-    echo "$num não é um número primo.";
+    echo "$num é um número primo.";
 }
