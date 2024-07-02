@@ -70,7 +70,7 @@ echo "<hr>";
 /* 05 */
 /* ------------------------------------ */
 
-$num = ;
+/* $num = 91;
 
 $divi_2 = fmod($num, 2);
 $divi_3 = fmod($num, 3);
@@ -78,7 +78,27 @@ $divi_5 = fmod($num, 5);
 $divi_7 = fmod($num, 7);
 
 if ($divi_7 == 0 || $divi_2 == 0 || $divi_5 == 0 || $divi_3 == 0) {
-    echo "$num não é número primo.";
+    echo "$num não é primo.";
 } else {
-    echo "$num é um número primo.";
+    echo "$num é primo.";
+} */
+
+function ehPrimo($numero) {
+    if ($numero < 2) {
+        return false;
+    }
+    for ($i = 2; $i <= sqrt($numero); $i++) {
+        if ($numero % $i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Testando a função
+$numero = 100;
+if (ehPrimo($numero)) {
+    echo $numero . " é um número primo.";
+} else {
+    echo $numero . " não é um número primo.";
 }
